@@ -94,12 +94,15 @@ function calculateAvg(arr){
 
 function getAverageGPA(textAreaValue){
     if (textAreaValue == ""){
-        return "Invalid Input!";
+        return "Enter your transcript first!";
     }
+    
     const gradeArrs = getGradesAndWeights(textAreaValue);
-
     const gradeWeightsArr = gradeArrs[0];
     const gradePercentsArr = gradeArrs[1];
+    if (gradeWeightsArr.length == 0 || gradePercentsArr.length == 0){
+        return "Invalid input";
+    }
 
     const gpaValuesArr = convertGradePercentsToGpa(gradePercentsArr);
     const weightedGpaValuesArr = calculateWeights(gradeWeightsArr, gpaValuesArr);

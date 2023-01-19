@@ -2,7 +2,7 @@
 
 
 .btn-calculate{
-    font-size: 24px;
+    font-size: 36px;
     font-family: 'Barlow Condensed';
     font-weight: 400;
     margin-top: 10px;
@@ -11,10 +11,13 @@
 
 .text-area-transcript{
     text-align: start;
-    width: 250px;
+    width: 600px;
+    height: 200px;
     display: block;
+    font-size: 16px;
 }
 
 .text-output{
     font-family: 'Georgia';
+    font-size: 24px;
 }
