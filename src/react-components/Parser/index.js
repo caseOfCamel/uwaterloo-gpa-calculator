@@ -1,5 +1,4 @@
-import { toHaveStyle } from "@testing-library/jest-dom/dist/matchers";
-import React, { useRef } from "react";
+import React from "react";
 import "./styles.css";
 
 function* asGenerator(func) {
