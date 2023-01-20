@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/uwaterloo-gpa-calculator/static/css/main.c5537c9e.css",
+    "main.js": "/uwaterloo-gpa-calculator/static/js/main.9dde9042.js",
+    "static/js/787.96fe0aea.chunk.js": "/uwaterloo-gpa-calculator/static/js/787.96fe0aea.chunk.js",
+    "static/media/waterloo_logo.png": "/uwaterloo-gpa-calculator/static/media/waterloo_logo.78533c01f597c17adacf.png",
+    "index.html": "/uwaterloo-gpa-calculator/index.html",
+    "main.c5537c9e.css.map": "/uwaterloo-gpa-calculator/static/css/main.c5537c9e.css.map",
+    "main.9dde9042.js.map": "/uwaterloo-gpa-calculator/static/js/main.9dde9042.js.map",
+    "787.96fe0aea.chunk.js.map": "/uwaterloo-gpa-calculator/static/js/787.96fe0aea.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c5537c9e.css",
+    "static/js/main.9dde9042.js"
+  ]
+}
