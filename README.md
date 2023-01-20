@@ -17,7 +17,7 @@ Then CTRL-V to paste into the text box and finally hit Calculate to return your 
 None of your personal data is stored. There is no database to store your information remotely in this project, since your transcript is essentially read through a very long string. This is then discarded once you exit the page.
 
 ## Acknowledgements
-This project was heavily inspired by Github user [Abdallah Arar](https://github.com/abdallaharar) and their very similar project found [here](https://github.com/abdallaharar/autogpa-uwaterloo#readme).
+This project was heavily inspired by Github user [Abdallah Arar](https://github.com/abdallaharar) and their very similar project found ([here](https://github.com/abdallaharar/autogpa-uwaterloo#readme)).
 
 About 5 years ago, UWaterloo changed their transcript format which subsequently broke their calculator.
 
