@@ -1,17 +1,17 @@
-# [University of Waterloo GPA Calculator](https://caseofcamel.github.io/uwaterloo-gpa-calculator/)
+# University of Waterloo GPA Calculator
 
 This tool parses your unofficial grade transcript to calculate your cumulative GPA according to the [OSMAS scale](https://www.ouac.on.ca/guide/omsas-conversion-table/).
 
 ## Instructions
-1. Log into [Quest](https://uwaterloo.ca/quest/").
+Log into [Quest](https://uwaterloo.ca/quest/")
 
-2. Go to Grades -> My Academics -> Unofficial Transcript.
+Go to Grades -> My Academics -> Unofficial Transcript
 
-3. Select your applicable Report Type, then click View Report.
+Select your applicable Report Type, then click View Report
 
-4. A PDF of your transcript should automatically open. Here, do CTRL-A and CTRL-C
+A PDF of your transcript should automatically open. Here, do CTRL-A and CTRL-C
 
-5. Then CTRL-V to paste into the text box and finally hit Calculate to return your cumulative GPA.
+Then CTRL-V to paste into the text box and finally hit Calculate to return your cumulative GPA.
 
 ## Privacy
 None of your personal data is stored. There is no database to store your information remotely in this project, since your transcript is essentially read through a very long string. This is then discarded once you exit the page.
