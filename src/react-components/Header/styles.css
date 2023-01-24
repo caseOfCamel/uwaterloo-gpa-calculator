@@ -34,5 +34,7 @@ img{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 70%;
+    min-width: 225px;
+    width: 50%;
+    max-width: 525px;
 }
