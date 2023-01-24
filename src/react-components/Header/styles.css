@@ -10,10 +10,12 @@
 
 .steps{
     text-align: start;
+    margin-bottom: 10px;
 }
 
 .steps-header{
-    margin-bottom: -8px;
+    margin-top: 15px;
+    margin-bottom: 10px;
     font-size: 30px;
     font-family: 'Barlow Condensed';
     font-weight: 600;
@@ -36,5 +38,5 @@ img{
     margin-right: auto;
     min-width: 225px;
     width: 50%;
-    max-width: 525px;
+    max-width: 520px;
 }

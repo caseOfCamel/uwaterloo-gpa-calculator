@@ -9,9 +9,9 @@ This tool parses your unofficial grade transcript to calculate your cumulative G
 
 3. Select your applicable Report Type, then click View Report.
 
-4. A PDF of your transcript should automatically open. Here, do CTRL-A and CTRL-C
+4. A PDF of your transcript should automatically open. Here, copy the entire transcript (Windows: CTRL + A and CTRL + C on Windows, Mac: Command + A and Command + C)
 
-5. Then CTRL-V to paste into the text box and finally hit Calculate to return your cumulative GPA.
+5. Then paste the transcript into the text box (Windows: CTRL + V, Mac: Command + V) and finally hit Calculate to return your cumulative GPA.
 
 ## Privacy
 None of your personal data is stored. There is no database to store your information remotely in this project, since your transcript is essentially read through a very long string. This is then discarded once you exit the page.
