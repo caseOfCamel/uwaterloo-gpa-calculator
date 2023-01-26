@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/uwaterloo-gpa-calculator/static/css/main.8c3f4ea6.css",
-    "main.js": "/uwaterloo-gpa-calculator/static/js/main.735bbf86.js",
+    "main.css": "/uwaterloo-gpa-calculator/static/css/main.8ae56b86.css",
+    "main.js": "/uwaterloo-gpa-calculator/static/js/main.55d1fa8b.js",
     "static/js/787.96fe0aea.chunk.js": "/uwaterloo-gpa-calculator/static/js/787.96fe0aea.chunk.js",
     "static/media/waterloo_logo.png": "/uwaterloo-gpa-calculator/static/media/waterloo_logo.78533c01f597c17adacf.png",
     "index.html": "/uwaterloo-gpa-calculator/index.html",
-    "main.8c3f4ea6.css.map": "/uwaterloo-gpa-calculator/static/css/main.8c3f4ea6.css.map",
-    "main.735bbf86.js.map": "/uwaterloo-gpa-calculator/static/js/main.735bbf86.js.map",
+    "main.8ae56b86.css.map": "/uwaterloo-gpa-calculator/static/css/main.8ae56b86.css.map",
+    "main.55d1fa8b.js.map": "/uwaterloo-gpa-calculator/static/js/main.55d1fa8b.js.map",
     "787.96fe0aea.chunk.js.map": "/uwaterloo-gpa-calculator/static/js/787.96fe0aea.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8c3f4ea6.css",
-    "static/js/main.735bbf86.js"
+    "static/css/main.8ae56b86.css",
+    "static/js/main.55d1fa8b.js"
   ]
 }
