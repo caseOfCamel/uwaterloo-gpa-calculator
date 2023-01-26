@@ -1,20 +1,28 @@
 import React from "react";
 import "./styles.css";
 
+/**
+ * This file contains the logic behind calculating the cumulative GPA based on the user-inputted transcript.
+ * It also displays the transcript text area, calculate button, and the output (the calculated cumulative GPA).
+*/
+
 function* asGenerator(func) {
     var res;
     while ((res = func())) yield res;
 }
 
 /**
+ * Parses through user-inputted transcript text to retrieve each course's grade and its respective weighting
  * @param {string} transcriptText The transcript text
+ * @returns {Array[Array[number], Array[number]]} An array holding the grade weightings and grade percent arrays
  */
 function getGradesAndWeights(transcriptText){
-    // this regex considers each line with a course weighting (like 0.50) and grade (like 85)
+
     const gradesRegex = /((\s(0|1)\.\d{2}\s\d{2,3}))/g;
 
-    // this parses through the entire text and specifically returns the grade weightings and percentages
-    // formatted like ("d.dd dd"), where d is a digit
+    // this parses through the entire text and specifically returns the lines with text
+    // formatted like ("d.dd dd"), where d is a digit, performed with the regex above
+    // we take these to be the grade weighting and the grade (e.g. "0.50 85")
     const gradesArr = Array.from(asGenerator(() => gradesRegex.exec(transcriptText)));
 
     const gradeWeightsArr = [];
@@ -30,10 +38,14 @@ function getGradesAndWeights(transcriptText){
     return [gradeWeightsArr, gradePercentsArr];
 }
 
+/**
+ * Converts each grade percentage into its GPA value counterpart
+ * @param {Array[string]} gradePercentsArr An array of course grade percentages
+ * @returns {Array[number]} An array of course GPA values
+ */
 function convertGradePercentsToGpa(gradePercentsArr){
     const gpaValuesArr = [];
     gradePercentsArr.forEach(function(percent){
-        //console.log(percent)
         if (percent >= 90) gpaValuesArr.push(4.0);
         else if (percent >= 85) gpaValuesArr.push(3.9);
         else if (percent >= 80) gpaValuesArr.push(3.7);
@@ -51,9 +63,19 @@ function convertGradePercentsToGpa(gradePercentsArr){
     return gpaValuesArr;
 }
 
-function calculateWeights(gradeWeightsArr, gpaValuesArr){
+/**
+ * 
+ * @param {Array[number]} gradeWeightsArr An array of course weightings
+ * @param {Array[number]} gpaValuesArr An array of converted course GPAs
+ * @returns {Array[number]} A weighted array of numbers according to course weightings and the respective GPA
+ */
+function measureGradeWeightings(gradeWeightsArr, gpaValuesArr){
     const weightedGpaValsArr = [];
     let currGpaIndex = 0; // keeps track of the current index of gpaValuesArr 
+
+    // since courses are weighted in intervals of 0.25, we add the respective course grade
+    // x times, where x is the course weighting divided by 0.25
+    // e.g. if a course grade was 85 and had a weight of 0.75, we add 85 a total of 3 times to the output array
     gradeWeightsArr.forEach(function(weight){
         let times = 0;
         switch(weight){
@@ -80,6 +102,11 @@ function calculateWeights(gradeWeightsArr, gpaValuesArr){
     return weightedGpaValsArr;
 }
 
+/**
+ * Calculate the average value of an array of numbers
+ * @param {Array[number]} arr Input array
+ * @returns The average value of the elements in the array
+ */
 function calculateAvg(arr){
     var total = 0;
     var count = 0;
@@ -92,20 +119,25 @@ function calculateAvg(arr){
     return total/count;
 }
 
+/**
+ * Uses all the functions above to calculate the cumulative GPA based on the inputted transcript
+ * @param {} textAreaValue The transcript text
+ * @returns The cumulative GPA according to the transcript
+ */
 function getAverageGPA(textAreaValue){
-    if (textAreaValue == ""){
+    if (textAreaValue === ""){
         return "Enter your transcript first!";
     }
     
     const gradeArrs = getGradesAndWeights(textAreaValue);
     const gradeWeightsArr = gradeArrs[0];
     const gradePercentsArr = gradeArrs[1];
-    if (gradeWeightsArr.length == 0 || gradePercentsArr.length == 0){
+    if (gradeWeightsArr.length === 0 || gradePercentsArr.length === 0){
         return "Invalid input";
     }
 
     const gpaValuesArr = convertGradePercentsToGpa(gradePercentsArr);
-    const weightedGpaValuesArr = calculateWeights(gradeWeightsArr, gpaValuesArr);
+    const weightedGpaValuesArr = measureGradeWeightings(gradeWeightsArr, gpaValuesArr);
 
     const averageGPA = calculateAvg(weightedGpaValuesArr).toFixed(3);
     return averageGPA;
@@ -122,10 +154,12 @@ class Parser extends React.Component{
         this.handleClick = this.handleClick.bind(this);
     }
     
+    // called when the user updates the transcript text area
     handleChange(event){
         this.setState({transcriptTextArea: event.target.value})
     }
 
+    // called when the user presses the Calculate button
     handleClick(){
         this.setState({output: getAverageGPA(this.state.transcriptTextArea)})
     }
